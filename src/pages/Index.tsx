@@ -7,6 +7,7 @@ import Stats from '@/components/Stats';
 import Reviews from '@/components/Reviews';
 import Gallery from '@/components/Gallery';
 import CTASection from '@/components/CTASection';
+import InstagramVideos from '@/components/InstagramVideos';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <LocationBar />
         <ServicesGrid />
         <Stats />
+        <InstagramVideos />
         <Gallery limit={6} />
         <Reviews />
         <CTASection />

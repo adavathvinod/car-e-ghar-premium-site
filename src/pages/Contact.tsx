@@ -210,16 +210,16 @@ const Contact = () => {
         {/* Map Section */}
         <section className="py-12 bg-card">
           <div className="container mx-auto px-4">
-            <div className="rounded-xl overflow-hidden border border-border">
+            <div className="rounded-xl overflow-hidden border border-primary/20" style={{ boxShadow: 'var(--shadow-gold)' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9337461851584!2d78.54773!3d17.47167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b4a6fce8b79%3A0x8c6f9e21d4f6f1a0!2sLakshmipuram%20Colony%2C%20Sainikpuri%2C%20Secunderabad%2C%20Telangana%20500094!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.4850122903663!2d78.54976007493703!3d17.48434598341949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b36a1b6fe87%3A0x6af45c6f748a0481!2sCar-e-Ghar!5e0!3m2!1sen!2sin!4v1769289543382!5m2!1sen!2sin"
                 width="100%"
-                height="400"
+                height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale contrast-125"
+                className="grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
               />
             </div>
           </div>
