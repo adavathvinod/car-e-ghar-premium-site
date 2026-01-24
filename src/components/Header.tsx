@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MapPin } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Instagram, Mail } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const Header = () => {
@@ -29,29 +29,54 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-card/80 backdrop-blur-sm border-b border-border py-2 hidden md:block">
+      <div className="bg-gradient-to-r from-card via-card/95 to-card border-b border-primary/20 py-2.5 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-8">
             <a 
               href="tel:08977041344" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
             >
-              <Phone size={14} className="text-primary" />
-              <span>089770 41344</span>
+              <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                <Phone size={12} className="text-primary" />
+              </div>
+              <span className="font-medium">089770 41344</span>
             </a>
             <a 
-              href="https://maps.google.com/?q=28,+Lakshmipuram+Colony,+Sainikpuri,+Secunderabad,+Telangana+500094"
+              href="https://maps.google.com/?q=Car-e-Ghar,+Sainikpuri,+Secunderabad"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
             >
-              <MapPin size={14} className="text-primary" />
+              <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                <MapPin size={12} className="text-primary" />
+              </div>
               <span>Sainikpuri, Secunderabad</span>
             </a>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-muted-foreground">Open Today:</span>
-            <span className="text-primary font-medium">9:00 AM – 8:00 PM</span>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <span>Open Today:</span>
+              <span className="text-primary font-semibold">9:00 AM – 8:00 PM</span>
+            </div>
+            <div className="h-4 w-px bg-border" />
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/careghar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 flex items-center justify-center hover:scale-110 transition-transform"
+                aria-label="Instagram"
+              >
+                <Instagram size={14} className="text-white" />
+              </a>
+              <Link
+                to="/contact"
+                className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 hover:scale-110 transition-all"
+                aria-label="Contact"
+              >
+                <Mail size={14} className="text-primary" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
