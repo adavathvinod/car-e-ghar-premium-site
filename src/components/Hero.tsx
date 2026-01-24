@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import car1 from '@/assets/car-1.png';
-import car2 from '@/assets/car-2.png';
-import car5 from '@/assets/car-5.png';
+import hero1 from '@/assets/hero-1.jpg';
+import hero2 from '@/assets/hero-2.jpg';
+import hero3 from '@/assets/hero-3.jpg';
 
 const slides = [
   {
-    image: car1,
+    image: hero1,
     title: 'COMPLETE CAR CARE SOLUTION',
     subtitle: 'Premium Wash, Protection & Detailing',
     cta: 'Book Appointment',
   },
   {
-    image: car2,
+    image: hero2,
     title: 'PREMIUM DETAILING EXPERTS',
     subtitle: 'Your Car, Our Passion',
     cta: 'View Services',
   },
   {
-    image: car5,
+    image: hero3,
     title: 'SHOWROOM SHINE GUARANTEED',
     subtitle: 'Ceramic Coating • PPF • Interior Care',
     cta: 'Explore Gallery',
