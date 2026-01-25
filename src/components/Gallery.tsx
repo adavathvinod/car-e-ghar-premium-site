@@ -24,9 +24,10 @@ const galleryImages = [
 
 interface GalleryProps {
   limit?: number;
+  hideHeader?: boolean;
 }
 
-const Gallery = ({ limit }: GalleryProps) => {
+const Gallery = ({ limit, hideHeader = false }: GalleryProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const displayedImages = limit ? galleryImages.slice(0, limit) : galleryImages;
 
@@ -34,14 +35,16 @@ const Gallery = ({ limit }: GalleryProps) => {
     <>
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-title">
-              <span className="text-gradient-gold">OUR WORK</span>
-            </h2>
-            <p className="section-subtitle">
-              See the transformation. From dusty to dazzling, our work speaks for itself.
-            </p>
-          </div>
+          {!hideHeader && (
+            <div className="text-center mb-16">
+              <h2 className="section-title">
+                <span className="text-gradient-gold">OUR WORK</span>
+              </h2>
+              <p className="section-subtitle">
+                See the transformation. From dusty to dazzling, our work speaks for itself.
+              </p>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {displayedImages.map((image, index) => (

@@ -21,7 +21,7 @@ const Services = () => {
           </div>
         </section>
 
-        <ServicesGrid showAll />
+        <ServicesGrid showAll hideHeader />
         <CTASection />
       </main>
       <Footer />

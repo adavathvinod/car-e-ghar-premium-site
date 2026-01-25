@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import GalleryComponent from '@/components/Gallery';
 import CTASection from '@/components/CTASection';
 
@@ -21,7 +22,11 @@ const GalleryPage = () => {
           </div>
         </section>
 
-        <GalleryComponent />
+        {/* Before/After Section */}
+        <BeforeAfterGallery />
+        
+        {/* Additional Work */}
+        <GalleryComponent hideHeader />
         <CTASection />
       </main>
       <Footer />

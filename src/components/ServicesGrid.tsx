@@ -119,23 +119,26 @@ const services = [
 
 interface ServicesGridProps {
   showAll?: boolean;
+  hideHeader?: boolean;
 }
 
-const ServicesGrid = ({ showAll = false }: ServicesGridProps) => {
+const ServicesGrid = ({ showAll = false, hideHeader = false }: ServicesGridProps) => {
   const displayedServices = showAll ? services : services.slice(0, 8);
 
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="section-title">
-            <span className="text-gradient-gold">OUR SERVICES</span>
-          </h2>
-          <p className="section-subtitle">
-            Complete car care solutions from basic wash to premium protection. 
-            We use only the best products and techniques.
-          </p>
-        </div>
+        {!hideHeader && (
+          <div className="text-center mb-16">
+            <h2 className="section-title">
+              <span className="text-gradient-gold">OUR SERVICES</span>
+            </h2>
+            <p className="section-subtitle">
+              Complete car care solutions from basic wash to premium protection. 
+              We use only the best products and techniques.
+            </p>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedServices.map((service, index) => (
