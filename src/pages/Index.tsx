@@ -5,7 +5,7 @@ import LocationBar from '@/components/LocationBar';
 import ServicesGrid from '@/components/ServicesGrid';
 import Stats from '@/components/Stats';
 import Reviews from '@/components/Reviews';
-import Gallery from '@/components/Gallery';
+import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import CTASection from '@/components/CTASection';
 import InstagramVideos from '@/components/InstagramVideos';
 
@@ -19,7 +19,7 @@ const Index = () => {
         <ServicesGrid />
         <Stats />
         <InstagramVideos />
-        <Gallery limit={6} />
+        <BeforeAfterGallery />
         <Reviews />
         <CTASection />
       </main>
