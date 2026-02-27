@@ -69,16 +69,6 @@ const Index = () => {
     toast({ title: "Invoice saved to history!" });
   };
 
-  const handleAIResult = (data: { clientName?: string; clientAddress?: string; items: LineItem[] }) => {
-    if (data.clientName) setClientName(data.clientName);
-    if (data.clientAddress) setClientAddress(data.clientAddress);
-    if (data.items.length > 0) {
-      setItems(prev => {
-        const nonEmpty = prev.filter(i => i.particulars.trim() || i.amount > 0);
-        return [...nonEmpty, ...data.items];
-      });
-    }
-  };
 
   if (!loaded) {
     return <div className="min-h-screen bg-background flex items-center justify-center text-muted-foreground">Loading...</div>;
