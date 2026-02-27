@@ -122,7 +122,7 @@ const Index = () => {
 
       <div className="flex flex-col lg:flex-row gap-0 lg:gap-6 max-w-[1600px] mx-auto p-4 lg:p-6">
         <div className={`w-full lg:w-[420px] shrink-0 space-y-4 ${activeTab === "preview" ? "hidden lg:block" : ""}`}>
-          <AIInput onResult={handleAIResult} />
+          
           <div className="bg-card rounded-lg border border-border p-4 shadow-sm">
             <CompanyForm company={company} onChange={setCompany} headerAlignment={headerAlignment} onAlignmentChange={setHeaderAlignment} />
           </div>
