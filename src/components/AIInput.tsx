@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Mic, MicOff, Send, Sparkles, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+
 import { useToast } from "@/hooks/use-toast";
 import type { LineItem } from "@/lib/invoice-utils";
 
@@ -21,11 +21,10 @@ export function AIInput({ onResult }: AIInputProps) {
     if (!text.trim() || loading) return;
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke("parse-invoice", {
-        body: { text: text.trim() },
-      });
-
-      if (error) throw error;
+      // Supabase not connected - show message
+      toast({ title: "AI not available", description: "Connect to Lovable Cloud to enable AI parsing.", variant: "destructive" });
+      const data: any = null;
+      if (!data) return;
       if (data?.error) {
         toast({ title: "AI Error", description: data.error, variant: "destructive" });
         return;
