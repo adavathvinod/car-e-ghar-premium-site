@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CompanyForm } from "@/components/CompanyForm";
 import { InvoiceForm } from "@/components/InvoiceForm";
 import { InvoicePreview } from "@/components/InvoicePreview";
-import { AIInput } from "@/components/AIInput";
+
 import { Button } from "@/components/ui/button";
 import { Download, Printer, FileText, Eye, Save, LayoutDashboard, BookmarkPlus } from "lucide-react";
 import { generateInvoiceNumber } from "@/lib/invoice-utils";
