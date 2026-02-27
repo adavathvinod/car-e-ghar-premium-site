@@ -21,11 +21,10 @@ export function AIInput({ onResult }: AIInputProps) {
     if (!text.trim() || loading) return;
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke("parse-invoice", {
-        body: { text: text.trim() },
-      });
-
-      if (error) throw error;
+      // Supabase not connected - show message
+      toast({ title: "AI not available", description: "Connect to Lovable Cloud to enable AI parsing.", variant: "destructive" });
+      const data: any = null;
+      if (!data) return;
       if (data?.error) {
         toast({ title: "AI Error", description: data.error, variant: "destructive" });
         return;
