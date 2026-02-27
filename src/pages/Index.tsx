@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CompanyForm } from "@/components/CompanyForm";
 import { InvoiceForm } from "@/components/InvoiceForm";
 import { InvoicePreview } from "@/components/InvoicePreview";
-import { AIInput } from "@/components/AIInput";
+
 import { Button } from "@/components/ui/button";
 import { Download, Printer, FileText, Eye, Save, LayoutDashboard, BookmarkPlus } from "lucide-react";
 import { generateInvoiceNumber } from "@/lib/invoice-utils";
@@ -69,16 +69,6 @@ const Index = () => {
     toast({ title: "Invoice saved to history!" });
   };
 
-  const handleAIResult = (data: { clientName?: string; clientAddress?: string; items: LineItem[] }) => {
-    if (data.clientName) setClientName(data.clientName);
-    if (data.clientAddress) setClientAddress(data.clientAddress);
-    if (data.items.length > 0) {
-      setItems(prev => {
-        const nonEmpty = prev.filter(i => i.particulars.trim() || i.amount > 0);
-        return [...nonEmpty, ...data.items];
-      });
-    }
-  };
 
   if (!loaded) {
     return <div className="min-h-screen bg-background flex items-center justify-center text-muted-foreground">Loading...</div>;
@@ -122,7 +112,7 @@ const Index = () => {
 
       <div className="flex flex-col lg:flex-row gap-0 lg:gap-6 max-w-[1600px] mx-auto p-4 lg:p-6">
         <div className={`w-full lg:w-[420px] shrink-0 space-y-4 ${activeTab === "preview" ? "hidden lg:block" : ""}`}>
-          <AIInput onResult={handleAIResult} />
+          
           <div className="bg-card rounded-lg border border-border p-4 shadow-sm">
             <CompanyForm company={company} onChange={setCompany} headerAlignment={headerAlignment} onAlignmentChange={setHeaderAlignment} />
           </div>
